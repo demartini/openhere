@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+
+      - name: Setup Xcode version
+        uses: maxim-lobanov/setup-xcode@v1.7.0
+        with:
+          xcode-version: latest-stable
+
+      - name: Format check
+        run: swift format lint --strict -r OpenHere OpenHereFinderExtension Packages/OpenHereCore/Sources Packages/OpenHereCore/Tests
+
+      - name: Unit tests (OpenHereCore)
+        run: swift test --package-path Packages/OpenHereCore
+
+      - name: Build app and Finder extension
+        run: |
+          xcodebuild -project OpenHere.xcodeproj -scheme OpenHere -configuration Release \
+            -derivedDataPath build/DerivedData build CODE_SIGNING_ALLOWED=NO
+          test -d build/DerivedData/Build/Products/Release/OpenHere.app/Contents/PlugIns/OpenHereFinderExtension.appex
