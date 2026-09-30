@@ -6,14 +6,14 @@
     <description>OpenHere updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.0.0</title>
-      <pubDate>Wed, 30 Sep 2026 10:52:54 +0000</pubDate>
-      <sparkle:version>1</sparkle:version>
-      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+      <title>Version 1.0.1</title>
+      <pubDate>Wed, 30 Sep 2026 11:54:31 +0000</pubDate>
+      <sparkle:version>16</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://github.com/demartini/openhere/releases/tag/v1.0.0</sparkle:releaseNotesLink>
-      <enclosure url="https://github.com/demartini/openhere/releases/download/v1.0.0/OpenHere-1.0.0.dmg"
-                 sparkle:edSignature="M06M2UYoESwS+NPQpIDtKRyj5+BCRm11RD/NrGFc29Rx9LFFLpCLmRW70Kjyq9wQzFRc5fQQMrXjtgomObXfBA==" length="4641665"
+      <sparkle:releaseNotesLink>https://github.com/demartini/openhere/releases/tag/v1.0.1</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/demartini/openhere/releases/download/v1.0.1/OpenHere-1.0.1.dmg"
+                 sparkle:edSignature="k0Kps1DBs9Cn7vifkikupwaV7/QGxVITQiZt+eE/zOcGueq9H4HLOeyoOOrRdvSZQb+7I7botAZSKfFogx4XAA==" length="4639979"
                  type="application/octet-stream"/>
     </item>
   </channel>
