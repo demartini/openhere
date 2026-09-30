@@ -4,19 +4,12 @@
     changelog_html.py <version> [CHANGELOG.md]
 
 Prints nothing when the version has no section. Handles what the changelog uses: `###` headings,
-`-` bullets (with indented continuation lines) and `inline code`.
+`-` bullets (with indented continuation lines), **bold** and `inline code`. No CSS on purpose: Sparkle
+shows a fragment in the system font and follows light and dark mode by itself.
 """
 import html
 import re
 import sys
-
-STYLE = (
-    "<style>:root{color-scheme:light dark}"
-    "body{font:13px/1.45 -apple-system,system-ui,sans-serif;margin:12px 16px}"
-    "h3{font-size:13px;margin:14px 0 6px}ul{padding-left:18px;margin:0}li{margin:4px 0}"
-    "code{font:12px ui-monospace,Menlo,monospace;background:rgba(127,127,127,.18);"
-    "padding:1px 4px;border-radius:4px}</style>"
-)
 
 
 def section_lines(path: str, version: str) -> list[str]:
@@ -34,10 +27,12 @@ def section_lines(path: str, version: str) -> list[str]:
 
 
 def inline(text: str) -> str:
-    return re.sub(r"`([^`]+)`", r"<code>\1</code>", html.escape(text, quote=False))
+    escaped = html.escape(text, quote=False)
+    escaped = re.sub(r"`([^`]+)`", r"<code>\1</code>", escaped)
+    return re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", escaped)
 
 
-def render(lines: list[str]) -> str:
+def render(version: str, lines: list[str]) -> str:
     body: list[str] = []
     items: list[str] = []
 
@@ -55,10 +50,10 @@ def render(lines: list[str]) -> str:
         elif line.startswith(" ") and items:
             items[-1] += " " + line.strip()
     flush()
-    return STYLE + "".join(body) if body else ""
+    return f"<h2>Version {html.escape(version)}</h2>" + "".join(body) if body else ""
 
 
 if __name__ == "__main__":
     version = sys.argv[1]
     changelog = sys.argv[2] if len(sys.argv) > 2 else "CHANGELOG.md"
-    print(render(section_lines(changelog, version)), end="")
+    print(render(version, section_lines(changelog, version)), end="")
