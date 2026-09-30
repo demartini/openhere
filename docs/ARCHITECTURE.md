@@ -39,8 +39,10 @@ Finder selection ─▶ extension ─▶ openhere://open?app=…&path=…&token=
 
 ## The Finder extension
 
-- **Monitored locations:** `/` plus every mounted volume (updated on mount / unmount / rename); Finder Sync
-  only shows menus for locations it was told to watch.
+- **Monitored locations:** `/` plus every volume mounted under `/Volumes` and the ones macOS lists as visible
+  (`MonitoredLocations`; updated on mount / unmount / rename). Finder Sync only shows menus inside the folders it was
+  told to watch. `mountedVolumeURLs(options: [.skipHiddenVolumes])` alone is not enough: it omits some volumes that
+  Finder shows in its sidebar, such as an external disk, so those never got a menu.
 - **Menu items** are identified by `NSMenuItem.tag`, not `representedObject`: Finder copies the menu across
   processes and drops `representedObject`.
 - **Toolbar button:** according to `ToolbarBehavior` it either opens the default terminal / editor straight
