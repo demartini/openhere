@@ -149,9 +149,7 @@ open OpenHere.xcodeproj
 
 ### Signing
 
-The Finder extension is sandboxed and shares its settings with the app through an App Group, so it only works end to end with a real signing identity. A free personal team is sufficient.
-
-Create the git-ignored local configuration and set your team:
+Without configuration the project builds with an ad-hoc signature, which is enough to run the app and load the Finder extension. To give the extension a stable identity across builds, sign with your own team. Create the git-ignored local configuration and set your team:
 
 ```console
 cp Config/Local.xcconfig.example Config/Local.xcconfig
@@ -163,7 +161,7 @@ CODE_SIGN_STYLE = Automatic
 CODE_SIGN_IDENTITY = Apple Development
 ```
 
-Then run the **OpenHere** scheme and enable the extension as described in [Installation](#installation).
+A free personal team is sufficient: the project uses no App Group or other capability that needs a provisioning profile. Then run the **OpenHere** scheme and enable the extension as described in [Installation](#installation).
 
 ### Common Tasks
 

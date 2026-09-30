@@ -31,7 +31,7 @@ icons, keep the coordinates in `scripts/build_release.sh` in sync with the arrow
 
 ```bash
 scripts/build_release.sh                       # ad hoc
-TEAM_ID=ABCDE12345 SIGNING_IDENTITY="Apple Development: Name (XXXX)" scripts/build_release.sh
+SIGNING_IDENTITY="Apple Development: Name (XXXX)" scripts/build_release.sh
 scripts/make_appcast.sh build/release/OpenHere-1.0.0.dmg /tmp/appcast.xml   # signs with the keychain key
 ```
 
@@ -74,7 +74,5 @@ report "up to date". Preview locally with `cd site && npm install && npm run bui
 - macOS ties the Automation (Finder) permission to the code signature. Each ad-hoc build has a new one, so
   macOS may ask again after an update. Signing every release with the same development certificate avoids
   this.
-- Without a team the App Group has no team prefix (`group.dev.demartini.openhere`); macOS may show a
-  one-time "access data from other apps" prompt.
 - The app has the `disable-library-validation` entitlement so the hardened runtime can load Sparkle when
   everything is ad-hoc signed (see `docs/SECURITY.md`).
