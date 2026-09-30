@@ -44,13 +44,14 @@ enum SettingsPane: String, CaseIterable, Identifiable {
 struct SettingsIcon: View {
   let symbol: String
   let tint: Color
+  var size: CGFloat = 26
 
   var body: some View {
     Image(systemName: symbol)
-      .font(.system(size: 13, weight: .semibold))
+      .font(.system(size: size * 0.5, weight: .semibold))
       .foregroundStyle(.white)
-      .frame(width: 26, height: 26)
-      .background(tint.gradient, in: RoundedRectangle(cornerRadius: 7, style: .continuous))
+      .frame(width: size, height: size)
+      .background(tint.gradient, in: RoundedRectangle(cornerRadius: size * 0.27, style: .continuous))
       .accessibilityHidden(true)
   }
 }
@@ -70,22 +71,18 @@ struct SettingsView: View {
         Label {
           Text(pane.title)
         } icon: {
-          SettingsIcon(symbol: pane.symbol, tint: pane.tint)
+          SettingsIcon(symbol: pane.symbol, tint: pane.tint, size: 20)
         }
         .tag(pane)
-        .padding(.vertical, 2)
       }
-      .navigationSplitViewColumnWidth(min: 190, ideal: 210, max: 250)
-      .safeAreaInset(edge: .top, spacing: 0) {
-        HStack(spacing: 10) {
-          Image(nsImage: NSApp.applicationIconImage).resizable().frame(width: 40, height: 40)
-          VStack(alignment: .leading, spacing: 0) {
-            Text("OpenHere").font(.headline)
-            Text(version).font(.caption).foregroundStyle(.secondary)
-          }
-          Spacer()
-        }
-        .padding(.horizontal, 14).padding(.top, 8).padding(.bottom, 10)
+      .listStyle(.sidebar)
+      .navigationSplitViewColumnWidth(min: 170, ideal: 190, max: 220)
+      .safeAreaInset(edge: .bottom, spacing: 0) {
+        Text("OpenHere \(version)")
+          .font(.caption)
+          .foregroundStyle(.tertiary)
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .padding(.horizontal, 16).padding(.vertical, 10)
       }
     } detail: {
       detail(for: navigation.selection ?? .general)
