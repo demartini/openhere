@@ -1,0 +1,743 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0373B8F6E48DEDF317F66561 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666978801CFE67202E7211A8 /* AboutView.swift */; };
+		0EC27939331093780275E765 /* ApplicationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D10A911C3D9E6B7834F4EF0 /* ApplicationIcon.swift */; };
+		0FC757A885E5B797E17F59B8 /* OpenHereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4039CBAA0EA89CAD6784D82C /* OpenHereApp.swift */; };
+		1368AC2D30F408FACA3AE386 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080D9B480829472DCCFDA247 /* AppEnvironment.swift */; };
+		1EB645306D5E70EC1BDB621F /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729DF247279534462DB44083 /* FinderSync.swift */; };
+		1FBB10F9AADC1A152C968B7D /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C991761BC961F46F242CE92A /* SettingsModel.swift */; };
+		223A5CC5B4D396AC164FC416 /* ExtensionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1309727969B39FF47660F518 /* ExtensionStatus.swift */; };
+		2C3DED115A938BEE4E23B1B5 /* ExtensionRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D80EB50A3D75A975E83A3A /* ExtensionRequestHandler.swift */; };
+		37CA47581336E5C82587DA26 /* LoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FD1D7B5F217B197C57A48A /* LoginItem.swift */; };
+		46143E2E14B425D8DAB09FAB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A8487D89B6219E65BCDA2AB6 /* Localizable.xcstrings */; };
+		51CBE57D2D4271F7700EE67C /* ShortcutRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19702005F8A3AF70BB8B9C83 /* ShortcutRecorder.swift */; };
+		645D6D58EF88DF658E92B639 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 397F58F08ED4DF90D7A1136E /* AppIcon.icon */; };
+		6633B9768E8E5ED92993D528 /* DiagnosticsExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF885070BE38305E85D012C9 /* DiagnosticsExporter.swift */; };
+		687157ACDC484DED1FD2E266 /* OpenRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80BB72AD5AE7E2799C5F9A0 /* OpenRequestHandler.swift */; };
+		780094BA0B4E995771FEB9F6 /* OpenHereCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8E08D0CC3DCFF8F88A9E3DBD /* OpenHereCore */; };
+		8CFD1A7C9824CA5C12A7C41D /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB92078736FF534D209F2EA /* WindowCoordinator.swift */; };
+		8E50CC4406C712BBCA2FDC66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883531B969F752A88E1EFE13 /* AppDelegate.swift */; };
+		8FD0B7197EF391302F372391 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 035AEBFA1170192EE3D2FE36 /* Sparkle */; };
+		948F58891B08ACA8E28ECF7C /* OpenHereCore in Frameworks */ = {isa = PBXBuildFile; productRef = B1168A044DCFE334D6BF775C /* OpenHereCore */; };
+		94B7AC1C26E3AB88697F9F49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AF55BF810876ED5AA35F13B /* Assets.xcassets */; };
+		9B2607F50D814089215850C7 /* SettingsNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35783BF92278F25EF1D65991 /* SettingsNavigation.swift */; };
+		9CD4B666A40A1545125DA8F8 /* ShortcutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980201568FE12F7973C38A6D /* ShortcutManager.swift */; };
+		A36C9AED5C26C3A545DBDD85 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FDE03EE31D4D6D20D0CE7B /* SettingsView.swift */; };
+		B2BFA43C755AB75D120D166E /* OpenHereFinderExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EE71A1AD4BBC575DD545E586 /* OpenHereFinderExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CCF155F2C46D5D634CFF1F9C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807AC61533982EBE472C9860 /* OnboardingView.swift */; };
+		CD3D073BEDE8FAC6D2565862 /* ProjectLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5895B85399AE00DB1E248D /* ProjectLinks.swift */; };
+		CF75189689EABB707E3183E7 /* FinderQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1AC39BC517AA22630034F2 /* FinderQuery.swift */; };
+		DE4691E6922990EF9713C986 /* UpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA858FE871DA7C3BFE2325 /* UpdateService.swift */; };
+		E1CC0D9FCF334F48132363D9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 936D17D034367241A7B618BD /* Localizable.xcstrings */; };
+		E3A5C7151958167747C3F400 /* AddApplicationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658BFDFE27EB81AA181E0A7 /* AddApplicationSheet.swift */; };
+		F37A4C9AFD9B775767939677 /* FinderContextResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E71FAD8467CAC67FE2C47C /* FinderContextResolver.swift */; };
+		F98D2F5A379BCE9199695251 /* MenuBarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD507700539FC0EF586ECEE /* MenuBarContent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6AC71D1E088AA3C1D434A6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3FA1A191150967641D6CC853 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC1A2D482E27596F32666ED0;
+			remoteInfo = OpenHereFinderExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A11082C8334D34DCB7228BD7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B2BFA43C755AB75D120D166E /* OpenHereFinderExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		04FD729D40866FDF6EEFD389 /* OpenHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		080D9B480829472DCCFDA247 /* AppEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		0AD507700539FC0EF586ECEE /* MenuBarContent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MenuBarContent.swift; sourceTree = "<group>"; };
+		0D10A911C3D9E6B7834F4EF0 /* ApplicationIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ApplicationIcon.swift; sourceTree = "<group>"; };
+		1309727969B39FF47660F518 /* ExtensionStatus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExtensionStatus.swift; sourceTree = "<group>"; };
+		16BA858FE871DA7C3BFE2325 /* UpdateService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UpdateService.swift; sourceTree = "<group>"; };
+		19702005F8A3AF70BB8B9C83 /* ShortcutRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShortcutRecorder.swift; sourceTree = "<group>"; };
+		1A5895B85399AE00DB1E248D /* ProjectLinks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ProjectLinks.swift; sourceTree = "<group>"; };
+		35783BF92278F25EF1D65991 /* SettingsNavigation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsNavigation.swift; sourceTree = "<group>"; };
+		397F58F08ED4DF90D7A1136E /* AppIcon.icon */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
+		3B08D91D3E8778FE463FD909 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4039CBAA0EA89CAD6784D82C /* OpenHereApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OpenHereApp.swift; sourceTree = "<group>"; };
+		4658BFDFE27EB81AA181E0A7 /* AddApplicationSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AddApplicationSheet.swift; sourceTree = "<group>"; };
+		49FD1D7B5F217B197C57A48A /* LoginItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
+		4F904E373308316D12E495CE /* OpenHere.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = OpenHere.entitlements; sourceTree = "<group>"; };
+		508336AA9F99A12B4A304478 /* Base.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		666978801CFE67202E7211A8 /* AboutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		729DF247279534462DB44083 /* FinderSync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
+		7BD61D5787F29C5B92154933 /* OpenHereCore */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper; name = OpenHereCore; path = Packages/OpenHereCore; sourceTree = "<group>"; };
+		807AC61533982EBE472C9860 /* OnboardingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		883531B969F752A88E1EFE13 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8AF55BF810876ED5AA35F13B /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8D6BF346002340745FE38F75 /* OpenHereFinderExtension.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = OpenHereFinderExtension.entitlements; sourceTree = "<group>"; };
+		90D80EB50A3D75A975E83A3A /* ExtensionRequestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ExtensionRequestHandler.swift; sourceTree = "<group>"; };
+		936D17D034367241A7B618BD /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		971E46A7564474E2281B1BB3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		980201568FE12F7973C38A6D /* ShortcutManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShortcutManager.swift; sourceTree = "<group>"; };
+		A676A600B76E9B54F20B7D2B /* Debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		A8487D89B6219E65BCDA2AB6 /* Localizable.xcstrings */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AB30BDCE1ADFE5DC3257823B /* Local.xcconfig.example */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = Local.xcconfig.example; sourceTree = "<group>"; };
+		ADB92078736FF534D209F2EA /* WindowCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WindowCoordinator.swift; sourceTree = "<group>"; };
+		AF885070BE38305E85D012C9 /* DiagnosticsExporter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DiagnosticsExporter.swift; sourceTree = "<group>"; };
+		C991761BC961F46F242CE92A /* SettingsModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		CF7FE5812722E075FA2E15B9 /* Release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D0E71FAD8467CAC67FE2C47C /* FinderContextResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FinderContextResolver.swift; sourceTree = "<group>"; };
+		D80BB72AD5AE7E2799C5F9A0 /* OpenRequestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OpenRequestHandler.swift; sourceTree = "<group>"; };
+		E6FDE03EE31D4D6D20D0CE7B /* SettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EE71A1AD4BBC575DD545E586 /* OpenHereFinderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenHereFinderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1AC39BC517AA22630034F2 /* FinderQuery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FinderQuery.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		536CA525CD828BF1295F75CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780094BA0B4E995771FEB9F6 /* OpenHereCore in Frameworks */,
+				8FD0B7197EF391302F372391 /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99F772D4CC6057EFE54D94B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				948F58891B08ACA8E28ECF7C /* OpenHereCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11C17305BBA5C98A46C00764 /* Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				AF885070BE38305E85D012C9 /* DiagnosticsExporter.swift */,
+			);
+			path = Diagnostics;
+			sourceTree = "<group>";
+		};
+		1DCA059127E685A44DF21896 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				807AC61533982EBE472C9860 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		22837B08A761C48DA858AC0D /* Launching */ = {
+			isa = PBXGroup;
+			children = (
+				D80BB72AD5AE7E2799C5F9A0 /* OpenRequestHandler.swift */,
+			);
+			path = Launching;
+			sourceTree = "<group>";
+		};
+		49A8D19A4BB951BEB71127B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				936D17D034367241A7B618BD /* Localizable.xcstrings */,
+				8AF55BF810876ED5AA35F13B /* Assets.xcassets */,
+				397F58F08ED4DF90D7A1136E /* AppIcon.icon */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5041CAFEF06C0FE9D7A9862C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				883531B969F752A88E1EFE13 /* AppDelegate.swift */,
+				080D9B480829472DCCFDA247 /* AppEnvironment.swift */,
+				4039CBAA0EA89CAD6784D82C /* OpenHereApp.swift */,
+				1A5895B85399AE00DB1E248D /* ProjectLinks.swift */,
+				ADB92078736FF534D209F2EA /* WindowCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		57D0B84923A057EA95C8115C /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				4658BFDFE27EB81AA181E0A7 /* AddApplicationSheet.swift */,
+				0D10A911C3D9E6B7834F4EF0 /* ApplicationIcon.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		78353D894C579C4F56C1031F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				666978801CFE67202E7211A8 /* AboutView.swift */,
+				C991761BC961F46F242CE92A /* SettingsModel.swift */,
+				35783BF92278F25EF1D65991 /* SettingsNavigation.swift */,
+				E6FDE03EE31D4D6D20D0CE7B /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		79FD161D2385B672C88125B7 /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				19702005F8A3AF70BB8B9C83 /* ShortcutRecorder.swift */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
+		7AAF673CFF80A11519BA3BCE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04FD729D40866FDF6EEFD389 /* OpenHere.app */,
+				EE71A1AD4BBC575DD545E586 /* OpenHereFinderExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F1EA2A91A15FD772149CC8A /* System */ = {
+			isa = PBXGroup;
+			children = (
+				49FD1D7B5F217B197C57A48A /* LoginItem.swift */,
+				980201568FE12F7973C38A6D /* ShortcutManager.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		8A093BBFCE0E6F7876562F24 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				0AD507700539FC0EF586ECEE /* MenuBarContent.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		A4112BB07F84A96D3400020C = {
+			isa = PBXGroup;
+			children = (
+				7AAF673CFF80A11519BA3BCE /* Products */,
+				C54F00CBC3145C17BB4B7A02 /* Config */,
+				D50776F63E64EE6DE6BECD76 /* OpenHere */,
+				E68DA375C58F2D49DE13A685 /* OpenHereFinderExtension */,
+				7BD61D5787F29C5B92154933 /* OpenHereCore */,
+			);
+			sourceTree = "<group>";
+		};
+		C54F00CBC3145C17BB4B7A02 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A676A600B76E9B54F20B7D2B /* Debug.xcconfig */,
+				CF7FE5812722E075FA2E15B9 /* Release.xcconfig */,
+				508336AA9F99A12B4A304478 /* Base.xcconfig */,
+				AB30BDCE1ADFE5DC3257823B /* Local.xcconfig.example */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		D50776F63E64EE6DE6BECD76 /* OpenHere */ = {
+			isa = PBXGroup;
+			children = (
+				5041CAFEF06C0FE9D7A9862C /* App */,
+				E3630BE1DF1991EA9D02D1A6 /* Features */,
+				DB3234DBDBE3C29A6FF2C964 /* Services */,
+				3B08D91D3E8778FE463FD909 /* Info.plist */,
+				4F904E373308316D12E495CE /* OpenHere.entitlements */,
+				49A8D19A4BB951BEB71127B2 /* Resources */,
+			);
+			path = OpenHere;
+			sourceTree = "<group>";
+		};
+		DB3234DBDBE3C29A6FF2C964 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				11C17305BBA5C98A46C00764 /* Diagnostics */,
+				F6D3ED138DC7B7B47ECC4C20 /* Finder */,
+				22837B08A761C48DA858AC0D /* Launching */,
+				7F1EA2A91A15FD772149CC8A /* System */,
+				F909687EFDF9C5137BDFEC8A /* Updates */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E3630BE1DF1991EA9D02D1A6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				57D0B84923A057EA95C8115C /* Applications */,
+				8A093BBFCE0E6F7876562F24 /* MenuBar */,
+				1DCA059127E685A44DF21896 /* Onboarding */,
+				78353D894C579C4F56C1031F /* Settings */,
+				79FD161D2385B672C88125B7 /* Shortcuts */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		E68DA375C58F2D49DE13A685 /* OpenHereFinderExtension */ = {
+			isa = PBXGroup;
+			children = (
+				90D80EB50A3D75A975E83A3A /* ExtensionRequestHandler.swift */,
+				D0E71FAD8467CAC67FE2C47C /* FinderContextResolver.swift */,
+				729DF247279534462DB44083 /* FinderSync.swift */,
+				971E46A7564474E2281B1BB3 /* Info.plist */,
+				8D6BF346002340745FE38F75 /* OpenHereFinderExtension.entitlements */,
+				F2D6A70235CD9E9B9953FEAC /* Resources */,
+			);
+			path = OpenHereFinderExtension;
+			sourceTree = "<group>";
+		};
+		F2D6A70235CD9E9B9953FEAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A8487D89B6219E65BCDA2AB6 /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F6D3ED138DC7B7B47ECC4C20 /* Finder */ = {
+			isa = PBXGroup;
+			children = (
+				1309727969B39FF47660F518 /* ExtensionStatus.swift */,
+				FF1AC39BC517AA22630034F2 /* FinderQuery.swift */,
+			);
+			path = Finder;
+			sourceTree = "<group>";
+		};
+		F909687EFDF9C5137BDFEC8A /* Updates */ = {
+			isa = PBXGroup;
+			children = (
+				16BA858FE871DA7C3BFE2325 /* UpdateService.swift */,
+			);
+			path = Updates;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C9AF9A8C60E051667032945 /* OpenHere */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5FD1D13DC60277CFF69B08D /* Build configuration list for PBXNativeTarget "OpenHere" */;
+			buildPhases = (
+				0F8AB79F0A9994E8C8FC4EC4 /* Sources */,
+				536CA525CD828BF1295F75CF /* Frameworks */,
+				CC1E243159C372CD81F5C808 /* Resources */,
+				A11082C8334D34DCB7228BD7 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AA8802CED5AC4BE873F2910 /* PBXTargetDependency */,
+			);
+			name = OpenHere;
+			packageProductDependencies = (
+				8E08D0CC3DCFF8F88A9E3DBD /* OpenHereCore */,
+				035AEBFA1170192EE3D2FE36 /* Sparkle */,
+			);
+			productName = OpenHere;
+			productReference = 04FD729D40866FDF6EEFD389 /* OpenHere.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC1A2D482E27596F32666ED0 /* OpenHereFinderExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F752B315083F99085B57F02 /* Build configuration list for PBXNativeTarget "OpenHereFinderExtension" */;
+			buildPhases = (
+				36B71EF4E39AAFDE558F8963 /* Sources */,
+				99F772D4CC6057EFE54D94B9 /* Frameworks */,
+				B7139CBDB7301B62AEFABEDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenHereFinderExtension;
+			packageProductDependencies = (
+				B1168A044DCFE334D6BF775C /* OpenHereCore */,
+			);
+			productName = OpenHereFinderExtension;
+			productReference = EE71A1AD4BBC575DD545E586 /* OpenHereFinderExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FA1A191150967641D6CC853 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2700;
+			};
+			buildConfigurationList = 6E7EF86FE342664EA01472FA /* Build configuration list for PBXProject "OpenHere" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				"pt-BR",
+			);
+			mainGroup = A4112BB07F84A96D3400020C;
+			packageReferences = (
+				F69AB56B68093CE5A88D5340 /* XCLocalSwiftPackageReference "OpenHereCore" */,
+				7C4AF047B8179C7CB016085D /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
+			productRefGroup = 7AAF673CFF80A11519BA3BCE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C9AF9A8C60E051667032945 /* OpenHere */,
+				DC1A2D482E27596F32666ED0 /* OpenHereFinderExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7139CBDB7301B62AEFABEDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46143E2E14B425D8DAB09FAB /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC1E243159C372CD81F5C808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CC0D9FCF334F48132363D9 /* Localizable.xcstrings in Resources */,
+				94B7AC1C26E3AB88697F9F49 /* Assets.xcassets in Resources */,
+				645D6D58EF88DF658E92B639 /* AppIcon.icon in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F8AB79F0A9994E8C8FC4EC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E50CC4406C712BBCA2FDC66 /* AppDelegate.swift in Sources */,
+				1368AC2D30F408FACA3AE386 /* AppEnvironment.swift in Sources */,
+				0FC757A885E5B797E17F59B8 /* OpenHereApp.swift in Sources */,
+				CD3D073BEDE8FAC6D2565862 /* ProjectLinks.swift in Sources */,
+				8CFD1A7C9824CA5C12A7C41D /* WindowCoordinator.swift in Sources */,
+				E3A5C7151958167747C3F400 /* AddApplicationSheet.swift in Sources */,
+				0EC27939331093780275E765 /* ApplicationIcon.swift in Sources */,
+				F98D2F5A379BCE9199695251 /* MenuBarContent.swift in Sources */,
+				CCF155F2C46D5D634CFF1F9C /* OnboardingView.swift in Sources */,
+				0373B8F6E48DEDF317F66561 /* AboutView.swift in Sources */,
+				1FBB10F9AADC1A152C968B7D /* SettingsModel.swift in Sources */,
+				9B2607F50D814089215850C7 /* SettingsNavigation.swift in Sources */,
+				A36C9AED5C26C3A545DBDD85 /* SettingsView.swift in Sources */,
+				51CBE57D2D4271F7700EE67C /* ShortcutRecorder.swift in Sources */,
+				6633B9768E8E5ED92993D528 /* DiagnosticsExporter.swift in Sources */,
+				223A5CC5B4D396AC164FC416 /* ExtensionStatus.swift in Sources */,
+				CF75189689EABB707E3183E7 /* FinderQuery.swift in Sources */,
+				687157ACDC484DED1FD2E266 /* OpenRequestHandler.swift in Sources */,
+				37CA47581336E5C82587DA26 /* LoginItem.swift in Sources */,
+				9CD4B666A40A1545125DA8F8 /* ShortcutManager.swift in Sources */,
+				DE4691E6922990EF9713C986 /* UpdateService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36B71EF4E39AAFDE558F8963 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C3DED115A938BEE4E23B1B5 /* ExtensionRequestHandler.swift in Sources */,
+				F37A4C9AFD9B775767939677 /* FinderContextResolver.swift in Sources */,
+				1EB645306D5E70EC1BDB621F /* FinderSync.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AA8802CED5AC4BE873F2910 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OpenHereFinderExtension;
+			target = DC1A2D482E27596F32666ED0 /* OpenHereFinderExtension */;
+			targetProxy = F6AC71D1E088AA3C1D434A6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		51EF1FD02195FC69F23152B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OpenHereFinderExtension/OpenHereFinderExtension.entitlements;
+				INFOPLIST_FILE = OpenHereFinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.demartini.openhere.FinderExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		618988E363BD22C5A666DCDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OpenHere/OpenHere.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OpenHere/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.demartini.openhere;
+				PRODUCT_NAME = OpenHere;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7376A1AB24629C19A93E9F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OpenHere/OpenHere.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = OpenHere/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.demartini.openhere;
+				PRODUCT_NAME = OpenHere;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7549A4B19FA1800DD07D47A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A676A600B76E9B54F20B7D2B /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_INDEPENDENT_TARGETS_IN_PARALLEL = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9E332A05C5CA75AFE7CA2A81 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF7FE5812722E075FA2E15B9 /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_INDEPENDENT_TARGETS_IN_PARALLEL = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		EFC0E989C56AA2C836938659 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OpenHereFinderExtension/OpenHereFinderExtension.entitlements;
+				INFOPLIST_FILE = OpenHereFinderExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.demartini.openhere.FinderExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E7EF86FE342664EA01472FA /* Build configuration list for PBXProject "OpenHere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7549A4B19FA1800DD07D47A7 /* Debug */,
+				9E332A05C5CA75AFE7CA2A81 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F752B315083F99085B57F02 /* Build configuration list for PBXNativeTarget "OpenHereFinderExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51EF1FD02195FC69F23152B8 /* Release */,
+				EFC0E989C56AA2C836938659 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5FD1D13DC60277CFF69B08D /* Build configuration list for PBXNativeTarget "OpenHere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7376A1AB24629C19A93E9F2E /* Release */,
+				618988E363BD22C5A666DCDF /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F69AB56B68093CE5A88D5340 /* XCLocalSwiftPackageReference "OpenHereCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/OpenHereCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C4AF047B8179C7CB016085D /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		035AEBFA1170192EE3D2FE36 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C4AF047B8179C7CB016085D /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+		8E08D0CC3DCFF8F88A9E3DBD /* OpenHereCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenHereCore;
+		};
+		B1168A044DCFE334D6BF775C /* OpenHereCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenHereCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 3FA1A191150967641D6CC853 /* Project object */;
+}
