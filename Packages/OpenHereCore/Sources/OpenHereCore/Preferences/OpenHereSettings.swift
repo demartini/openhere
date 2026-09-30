@@ -14,7 +14,7 @@ public enum LoggingLevel: String, Codable, Sendable, CaseIterable, Hashable {
   case debug
 }
 
-/// All user configuration, stored as a single JSON document in the App Group so the app and the
+/// All user configuration, stored as a single JSON document (see `SharedStorage`) so the app and the
 /// Finder extension always see a consistent snapshot.
 public struct OpenHereSettings: Codable, Sendable, Equatable {
   public var defaultTerminalID: String = BuiltInApplications.defaultTerminalID

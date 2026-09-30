@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.1
+
+### Fixed
+
+- Settings were lost every time the installed app was reopened, so the onboarding ran again.
+- The toolbar button and the context-menu actions did nothing in the downloaded (ad-hoc signed) app; only Copy Path worked.
+
+### Changed
+
+- Settings and the request token are now stored in `~/Library/Application Support/OpenHere` and read by the Finder extension through a read-only sandbox exception. The app no longer uses an App Group, which macOS only grants to apps with a paid Apple Developer team. Settings saved by 1.0.0 are not migrated, so the onboarding runs once more.
+- The Finder extension logs how many locations it monitors and whether it can read its settings (`log stream --predicate 'subsystem == "dev.demartini.openhere"' --info`).
+- Version and build number are set by the release itself: the version comes from the git tag and the build number is the commit count.
+
 ## 1.0.0
 
 - Finder Sync extension: toolbar button (opens the default terminal or editor at once, or shows a menu),

@@ -36,7 +36,5 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).FinderSync</string>
 	</dict>
-	<key>OpenHereAppGroup</key>
-	<string>$(TeamIdentifierPrefix)group.dev.demartini.openhere</string>
 </dict>
 </plist>

@@ -16,7 +16,7 @@ Packages/OpenHereCore (Swift package, no UI)
 ├── Application/    OpenTargetResolver, LaunchRequestBuilder, PathFormatter, OpenHereURL,
 │                   FinderMenuModel, RequestAuthenticator, CustomApplicationFactory
 ├── Infrastructure/ Launcher (NSWorkspace / Process), ApplicationLocating, Logging
-└── Preferences/    OpenHereSettings (one JSON document), FileSettingsStore (App Group container)
+└── Preferences/    OpenHereSettings (one JSON document), SharedStorage / FileSettingsStore (files in the user's Library)
 
 site/               landing page (HTML + Tailwind v4) and the Sparkle appcast, deployed with GitHub Pages
 ```
@@ -69,12 +69,22 @@ AppleScript is **not** used to launch anything. The single script in the code ba
 
 ## Data sharing
 
-`OpenHereSettings` is stored as JSON (`settings.json`) next to the request token (`request-token`, mode
-0600) in the App Group container `<TEAMID>.group.dev.demartini.openhere`; the Info.plist key
-`OpenHereAppGroup` carries the resolved id. Plain files are used instead of `UserDefaults` because the
-extension is another process and a preferences suite can be cached per process. Every field is optional
-when decoding, so older or newer documents never fail to load. XPC was deliberately left out (YAGNI); add it
-only if the extension needs a reply channel.
+`OpenHereSettings` is stored as JSON (`settings.json`) next to the request token (`request-token`, mode 0600) in
+`~/Library/Application Support/OpenHere/`. The unsandboxed app writes; the sandboxed extension only reads, through
+the sandbox exception `com.apple.security.temporary-exception.files.home-relative-path.read-only`
+(`/Library/Application Support/OpenHere/`). `SharedStorage` resolves the real home directory with `getpwuid`,
+because `NSHomeDirectory()` inside the extension is its sandbox container.
+
+**Why not an App Group.** Outside the Mac App Store macOS only grants an App Group to apps whose group id is
+prefixed with their Team ID (or authorised by an embedded provisioning profile), and macOS 27 silently denies
+containers across teams. A build without a paid Apple team — an ad-hoc or development-signed DMG — would write to a
+container the extension can never read, so settings were lost on relaunch and the extension had no token.
+`containerURL(forSecurityApplicationGroupIdentifier:)` gives no warning: on macOS it returns a plausible URL for
+groups the process is not allowed to use. A unit test keeps the extension entitlement in sync with `SharedStorage`.
+
+Files are used instead of `UserDefaults` because the extension is another process and a preferences suite can be
+cached per process. Every field is optional when decoding, so older or newer documents never fail to load. XPC was
+deliberately left out (YAGNI); add it only if the extension needs a reply channel.
 
 Fresh settings show only the default terminal and editor in the menus; the user adds more in Settings ›
 Applications (separate checkboxes for the context menu and the toolbar).

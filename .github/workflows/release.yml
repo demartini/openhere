@@ -15,6 +15,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0  # the build number is the commit count
+
+      - name: Validate the tag
+        run: |
+          if ! echo "$GITHUB_REF_NAME" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.]+)?$'; then
+            echo "Tag '$GITHUB_REF_NAME' is not a version tag (expected vMAJOR.MINOR.PATCH)" >&2
+            exit 1
+          fi
 
       - name: Setup Xcode version
         uses: maxim-lobanov/setup-xcode@v1.7.0
@@ -29,8 +38,8 @@ jobs:
 
       - name: Build (ad-hoc signed) and package
         run: |
+          # Version = tag; build number = commit count (see scripts/build_release.sh).
           export VERSION="${GITHUB_REF_NAME#v}"
-          export BUILD_NUMBER="${{ github.run_number }}"
           scripts/build_release.sh
 
       - name: Sign for Sparkle and write the appcast
@@ -59,16 +68,19 @@ jobs:
             "build/release/OpenHere-$VERSION.dmg" "build/release/OpenHere-$VERSION.dmg.sha256" \
             --title "OpenHere $VERSION" --notes-file "$RUNNER_TEMP/notes.md"
 
-      - name: Publish the appcast (GitHub Pages)
+      - name: Publish the appcast and sync the version
         run: |
+          VERSION="${GITHUB_REF_NAME#v}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git checkout -B main origin/main
           mkdir -p site/public
           cp "$RUNNER_TEMP/appcast.xml" site/public/appcast.xml
-          git add site/public/appcast.xml
-          git commit -m "chore(site): update appcast for ${GITHUB_REF_NAME}"
+          # Keep the project's version in step with the release so local builds report it.
+          sed -i '' -E "s/^MARKETING_VERSION = .*/MARKETING_VERSION = $VERSION/" Config/Base.xcconfig
+          git add site/public/appcast.xml Config/Base.xcconfig
+          git commit -m "chore(release): ${VERSION}" -m "Update the appcast and MARKETING_VERSION for ${GITHUB_REF_NAME}."
           git push origin main
 
       # Pushes made with GITHUB_TOKEN do not trigger other workflows, so deploy the site explicitly.

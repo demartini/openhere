@@ -31,7 +31,7 @@ icons, keep the coordinates in `scripts/build_release.sh` in sync with the arrow
 
 ```bash
 scripts/build_release.sh                       # ad hoc
-TEAM_ID=ABCDE12345 SIGNING_IDENTITY="Apple Development: Name (XXXX)" scripts/build_release.sh
+SIGNING_IDENTITY="Apple Development: Name (XXXX)" scripts/build_release.sh
 scripts/make_appcast.sh build/release/OpenHere-1.0.0.dmg /tmp/appcast.xml   # signs with the keychain key
 ```
 
@@ -43,17 +43,25 @@ SwiftPM has fetched Sparkle's tools.
 1. Add a `## <version>` section to `CHANGELOG.md` (for example `## 1.0.1`). Its body becomes the GitHub
    Release notes, which is also what Sparkle's "Release Notes" link shows; the workflow fails when the section is
    missing.
-2. Tag and push:
+2. Merge to `main`, then tag and push:
 
 ```bash
-git tag v1.0.0 && git push origin v1.0.0
+git tag v1.0.1 && git push origin v1.0.1
 ```
 
-The `Release` workflow tests, builds, signs the DMG for Sparkle, publishes the GitHub Release, and commits
-the new `site/public/appcast.xml` to `main`; the workflow then dispatches the `Pages` workflow explicitly (pushes made with `GITHUB_TOKEN` do not trigger
-other workflows) so the site is redeployed with the new appcast. The tag must be `v<version>`; the build number (`CFBundleVersion`) is the workflow run number
-and always increases, which is what Sparkle compares. The appcast lists only the latest release, so every
-older version updates straight to it.
+Nothing has to be bumped by hand:
+
+| Value | Comes from |
+| --- | --- |
+| Version (`CFBundleShortVersionString`) | the tag (`v1.0.1` → `1.0.1`); the workflow rejects tags that are not `vMAJOR.MINOR.PATCH` |
+| Build (`CFBundleVersion`) | the number of commits (`git rev-list --count HEAD`), which only grows — Sparkle compares it |
+
+The `Release` workflow tests, builds, signs the DMG for Sparkle and publishes the GitHub Release. It then commits
+`chore(release): <version>` to `main` with the new `site/public/appcast.xml` and `MARKETING_VERSION` in
+`Config/Base.xcconfig` (so local builds report the released version) and dispatches the `Pages` workflow explicitly,
+because pushes made with `GITHUB_TOKEN` do not trigger other workflows. The appcast lists only the latest release,
+so every older version updates straight to it. Local `scripts/build_release.sh` builds use the same rules
+(`VERSION=1.0.1 scripts/build_release.sh`; the version defaults to `Config/Base.xcconfig`).
 
 ## Website
 
@@ -74,7 +82,5 @@ report "up to date". Preview locally with `cd site && npm install && npm run bui
 - macOS ties the Automation (Finder) permission to the code signature. Each ad-hoc build has a new one, so
   macOS may ask again after an update. Signing every release with the same development certificate avoids
   this.
-- Without a team the App Group has no team prefix (`group.dev.demartini.openhere`); macOS may show a
-  one-time "access data from other apps" prompt.
 - The app has the `disable-library-validation` entitlement so the hardened runtime can load Sparkle when
   everything is ad-hoc signed (see `docs/SECURITY.md`).

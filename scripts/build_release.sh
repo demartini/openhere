@@ -2,9 +2,11 @@
 # Builds OpenHere and packages it as a DMG + SHA-256 for GitHub Releases. No notarization.
 #
 #   scripts/build_release.sh                       ad-hoc signature (works for everyone, no Apple account)
-#   TEAM_ID=ABCDE12345 SIGNING_IDENTITY="Apple Development: Name (XXXX)" scripts/build_release.sh
+#   SIGNING_IDENTITY="Apple Development: Name (XXXX)" scripts/build_release.sh
 #                                                  signs with a development certificate
-# Optional: VERSION=1.2.3 (overrides MARKETING_VERSION), BUILD_NUMBER=42
+# Optional: VERSION=1.2.3 (overrides MARKETING_VERSION in Config/Base.xcconfig).
+# The build number is the number of commits, so it always increases (Sparkle compares it) without anyone
+# editing a file; override with BUILD_NUMBER=42. Needs full git history (`fetch-depth: 0` in CI).
 #
 # The app is not notarized, so a browser-downloaded copy is quarantined by Gatekeeper; the in-app
 # updater removes the quarantine flag, see docs/RELEASING.md.
@@ -17,8 +19,8 @@ rm -rf "$BUILD"; mkdir -p "$BUILD"
 
 extra=()
 [[ -n "${VERSION:-}" ]] && extra+=("MARKETING_VERSION=$VERSION")
-[[ -n "${BUILD_NUMBER:-}" ]] && extra+=("CURRENT_PROJECT_VERSION=$BUILD_NUMBER")
-[[ -n "${TEAM_ID:-}" ]] && extra+=("DEVELOPMENT_TEAM=$TEAM_ID")
+BUILD_NUMBER="${BUILD_NUMBER:-$(git -C "$ROOT" rev-list --count HEAD)}"
+extra+=("CURRENT_PROJECT_VERSION=$BUILD_NUMBER")
 
 echo "▸ Building (Release)"
 xcodebuild build \
