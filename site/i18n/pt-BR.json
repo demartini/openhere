@@ -1,0 +1,131 @@
+{
+  "metaTitle": "OpenHere — Abra pastas do Finder no terminal ou editor",
+  "metaDescription": "O OpenHere adiciona ao Finder um botão na barra de ferramentas, menu de contexto e atalho que abrem a pasta atual ou a seleção no terminal ou editor que você escolher. Gratuito, código aberto, nativo do macOS.",
+  "navFeatures": "Recursos",
+  "navApps": "Aplicativos",
+  "navInstall": "Instalar",
+  "navFaq": "Dúvidas",
+  "navLangLabel": "English",
+  "navGithub": "GitHub",
+  "badge": "Gratuito · Código aberto · macOS 15+",
+  "heroTitle": "Abra seu ambiente de trabalho direto do Finder.",
+  "heroSubtitle": "Um clique, um atalho. Envie qualquer pasta ou arquivo para seu terminal ou editor favorito — Terminal, Ghostty, iTerm, VS Code, Cursor, Zed e mais.",
+  "ctaDownload": "Baixar para macOS",
+  "ctaGithub": "Ver no GitHub",
+  "heroNote": "App nativo em Swift · Apple silicon &amp; Intel",
+  "mockOpenHere": "Abrir aqui",
+  "mockCopyPath": "Copiar caminho",
+  "mockConfigure": "Configurar Open Here…",
+  "featuresTitle": "Tudo o que faltava no Finder",
+  "featuresSubtitle": "Pequeno, rápido e nativo. Fica fora do caminho até você precisar.",
+  "features": [
+    {
+      "icon": "toolbar",
+      "title": "Barra de ferramentas e menu de contexto",
+      "text": "Um botão na barra do Finder abre seu terminal padrão na hora. Clique com o botão direito em qualquer item para ver a lista completa."
+    },
+    {
+      "icon": "terminal",
+      "title": "Terminais e editores",
+      "text": "Terminal, iTerm, Ghostty, Warp, WezTerm, kitty, Alacritty, VS Code, Cursor, Zed, Xcode, Sublime Text e mais."
+    },
+    {
+      "icon": "keyboard",
+      "title": "Atalho de teclado",
+      "text": "Pressione ⇧⌘O no Finder. Global ou só no Finder, com a combinação que preferir."
+    },
+    {
+      "icon": "copy",
+      "title": "Copiar caminho do jeito certo",
+      "text": "POSIX, com escape para shell ou relativo — espaços, aspas e emojis tratados corretamente."
+    },
+    {
+      "icon": "apps",
+      "title": "Seus apps, seu menu",
+      "text": "Escolha o que aparece no menu de contexto e na barra, reordene e adicione qualquer aplicativo."
+    },
+    {
+      "icon": "shield",
+      "title": "Privado e seguro",
+      "text": "Sem análise de uso, sem conta. Caminhos nunca passam por um shell, então nomes de pasta estranhos não executam nada."
+    }
+  ],
+  "appsTitle": "Funciona com as ferramentas que você já usa",
+  "appsSubtitle": "O que estiver instalado é detectado automaticamente. Adicione outros nos Ajustes.",
+  "terminalsLabel": "Terminais",
+  "editorsLabel": "Editores",
+  "customLabel": "E os seus",
+  "customText": "Adicione qualquer app, com “Abrir com” padrão ou argumentos explícitos.",
+  "stepsTitle": "Como funciona",
+  "steps": [
+    {
+      "n": "1",
+      "title": "Selecione",
+      "text": "Escolha uma pasta ou arquivo no Finder — ou apenas fique na pasta que está vendo."
+    },
+    {
+      "n": "2",
+      "title": "Abrir aqui",
+      "text": "Clique no botão da barra, use o menu de contexto ou pressione seu atalho."
+    },
+    {
+      "n": "3",
+      "title": "Trabalhe",
+      "text": "Seu terminal ou editor abre ali mesmo, naquela pasta."
+    }
+  ],
+  "installTitle": "Instale em um minuto",
+  "installSubtitle": "Download gratuito. Requer macOS 15 Sequoia ou mais recente.",
+  "install1Title": "Baixe",
+  "install1Text": "Pegue o DMG mais recente nos Releases do GitHub e arraste o OpenHere para Aplicativos.",
+  "install2Title": "Permita a abertura",
+  "install2Text": "O OpenHere não é notarizado pela Apple. Rode isto uma vez no Terminal (ou clique com o botão direito no app e escolha Abrir):",
+  "install3Title": "Ative a extensão",
+  "install3Text": "Siga o guia de boas-vindas, ative a extensão do Finder e arraste “Open Here” para a barra do Finder (Visualizar › Personalizar barra de ferramentas…).",
+  "copy": "Copiar",
+  "copied": "Copiado",
+  "installCta": "Baixar a versão mais recente",
+  "trustTitle": "Feito para inspirar confiança",
+  "trust": [
+    {
+      "title": "Código aberto",
+      "text": "Licença MIT. Leia cada linha no GitHub."
+    },
+    {
+      "title": "Atualizações assinadas",
+      "text": "As atualizações são verificadas com assinatura EdDSA antes de serem instaladas."
+    },
+    {
+      "title": "Sem rastreamento",
+      "text": "A única requisição de rede é a busca por atualizações, que você pode desativar."
+    }
+  ],
+  "faqTitle": "Perguntas frequentes",
+  "faq": [
+    {
+      "q": "Por que o app não é notarizado?",
+      "a": "A notarização exige uma conta paga de desenvolvedor Apple. O OpenHere é de código aberto e suas atualizações são assinadas com uma chave própria. Você só precisa permitir uma vez."
+    },
+    {
+      "q": "Ele coleta algum dado?",
+      "a": "Não. Não há análise de uso nem telemetria. O app só contata o GitHub para buscar atualizações, o que pode ser desativado nos Ajustes."
+    },
+    {
+      "q": "Como atualizo?",
+      "a": "O OpenHere busca atualizações automaticamente e instala com um clique. Você também pode usar Ajustes › Geral › Buscar agora."
+    },
+    {
+      "q": "O menu não aparece no Finder.",
+      "a": "Ative a extensão em Ajustes do Sistema › Geral › Itens de Início e Extensões › Finder. O guia inicial do OpenHere abre essa tela para você."
+    },
+    {
+      "q": "Como desinstalo?",
+      "a": "Encerre o OpenHere e mova-o de Aplicativos para o Lixo. Se quiser, desative a extensão antes."
+    }
+  ],
+  "footerTagline": "Abra seu ambiente de trabalho mais rápido.",
+  "footerMadeBy": "Feito com ❤️ por Iolar Demartini Junior",
+  "footerLicense": "Licença MIT",
+  "footerReleases": "Versões",
+  "footerIssues": "Relatar um problema"
+}

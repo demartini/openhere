@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>OpenHere</title>
+    <link>https://demartini.github.io/openhere/</link>
+    <description>OpenHere updates</description>
+    <language>en</language>
+  </channel>
+</rss>

@@ -1,0 +1,131 @@
+{
+  "metaTitle": "OpenHere — Open Finder folders in your terminal or editor",
+  "metaDescription": "OpenHere adds a toolbar button, context menu and shortcut to Finder that open the current folder or selection in the terminal or editor you choose. Free, open source, native macOS.",
+  "navFeatures": "Features",
+  "navApps": "Apps",
+  "navInstall": "Install",
+  "navFaq": "FAQ",
+  "navLangLabel": "Português",
+  "navGithub": "GitHub",
+  "badge": "Free · Open source · macOS 15+",
+  "heroTitle": "Open your workspace, right from Finder.",
+  "heroSubtitle": "One click, one shortcut. Send any folder or file to your favorite terminal or editor — Terminal, Ghostty, iTerm, VS Code, Cursor, Zed and more.",
+  "ctaDownload": "Download for macOS",
+  "ctaGithub": "View on GitHub",
+  "heroNote": "Native Swift app · Apple silicon &amp; Intel",
+  "mockOpenHere": "Open Here",
+  "mockCopyPath": "Copy Path",
+  "mockConfigure": "Configure Open Here…",
+  "featuresTitle": "Everything Finder was missing",
+  "featuresSubtitle": "Small, fast and native. It stays out of your way until you need it.",
+  "features": [
+    {
+      "icon": "toolbar",
+      "title": "Toolbar &amp; context menu",
+      "text": "A button in the Finder toolbar opens your default terminal instantly. Right-click any item for the full list."
+    },
+    {
+      "icon": "terminal",
+      "title": "Terminals and editors",
+      "text": "Terminal, iTerm, Ghostty, Warp, WezTerm, kitty, Alacritty, VS Code, Cursor, Zed, Xcode, Sublime Text and more."
+    },
+    {
+      "icon": "keyboard",
+      "title": "Keyboard shortcut",
+      "text": "Press ⇧⌘O in Finder. Make it global or Finder-only, and record any combination you like."
+    },
+    {
+      "icon": "copy",
+      "title": "Copy path, the right way",
+      "text": "POSIX, shell-escaped or relative — spaces, quotes and emoji handled correctly."
+    },
+    {
+      "icon": "apps",
+      "title": "Your apps, your menu",
+      "text": "Choose what appears in the context menu and the toolbar, reorder it, and add any app you want."
+    },
+    {
+      "icon": "shield",
+      "title": "Private and safe",
+      "text": "No analytics, no accounts. Paths are never run through a shell, so odd folder names can’t execute anything."
+    }
+  ],
+  "appsTitle": "Works with the tools you already use",
+  "appsSubtitle": "Anything installed is detected automatically. Add other apps in Settings.",
+  "terminalsLabel": "Terminals",
+  "editorsLabel": "Editors",
+  "customLabel": "And yours",
+  "customText": "Add any app, with a standard “Open With” or explicit arguments.",
+  "stepsTitle": "How it works",
+  "steps": [
+    {
+      "n": "1",
+      "title": "Select",
+      "text": "Pick a folder or file in Finder — or just stay in the folder you’re viewing."
+    },
+    {
+      "n": "2",
+      "title": "Open Here",
+      "text": "Click the toolbar button, use the context menu, or press your shortcut."
+    },
+    {
+      "n": "3",
+      "title": "Work",
+      "text": "Your terminal or editor opens right there, in that folder."
+    }
+  ],
+  "installTitle": "Install in a minute",
+  "installSubtitle": "Free download. Requires macOS 15 Sequoia or later.",
+  "install1Title": "Download",
+  "install1Text": "Get the latest DMG from GitHub Releases and drag OpenHere to Applications.",
+  "install2Title": "Allow it to open",
+  "install2Text": "OpenHere isn’t notarized by Apple. Run this once in Terminal (or right-click the app and choose Open):",
+  "install3Title": "Enable the extension",
+  "install3Text": "Follow the welcome guide, turn on the Finder extension, then drag “Open Here” into the Finder toolbar (View › Customize Toolbar…).",
+  "copy": "Copy",
+  "copied": "Copied",
+  "installCta": "Download latest release",
+  "trustTitle": "Built to be trusted",
+  "trust": [
+    {
+      "title": "Open source",
+      "text": "MIT licensed. Read every line on GitHub."
+    },
+    {
+      "title": "Signed updates",
+      "text": "Updates are verified with an EdDSA signature before they’re installed."
+    },
+    {
+      "title": "No tracking",
+      "text": "The only network request is the update check, and you can turn it off."
+    }
+  ],
+  "faqTitle": "Questions",
+  "faq": [
+    {
+      "q": "Why isn’t the app notarized?",
+      "a": "Notarization requires a paid Apple Developer account. OpenHere is open source and its updates are signed with its own key instead. You only need to allow it once."
+    },
+    {
+      "q": "Does it collect any data?",
+      "a": "No. There is no analytics or telemetry. The app only contacts GitHub to check for updates, which you can disable in Settings."
+    },
+    {
+      "q": "How do I update?",
+      "a": "OpenHere checks for updates automatically and installs them with one click. You can also use Settings › General › Check Now."
+    },
+    {
+      "q": "The menu doesn’t appear in Finder.",
+      "a": "Enable the extension in System Settings › General › Login Items &amp; Extensions › Finder. OpenHere’s onboarding opens that screen for you."
+    },
+    {
+      "q": "How do I uninstall it?",
+      "a": "Quit OpenHere, then move it from Applications to the Trash. Disable the extension first if you like."
+    }
+  ],
+  "footerTagline": "Open your workspace faster.",
+  "footerMadeBy": "Made with ❤️ by Iolar Demartini Junior",
+  "footerLicense": "MIT License",
+  "footerReleases": "Releases",
+  "footerIssues": "Report an issue"
+}

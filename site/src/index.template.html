@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="{{lang}}" class="scroll-pt-20">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{metaTitle}}</title>
+  <meta name="description" content="{{metaDescription}}">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{{canonical}}">
+  <link rel="alternate" hreflang="en" href="{{siteUrl}}">
+  <link rel="alternate" hreflang="pt-BR" href="{{siteUrl}}pt-br/">
+  <link rel="icon" type="image/png" href="{{root}}assets/favicon.png">
+  <link rel="apple-touch-icon" href="{{root}}assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{metaTitle}}">
+  <meta property="og:description" content="{{metaDescription}}">
+  <meta property="og:image" content="{{siteUrl}}assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OpenHere — Open the Finder location in the terminal or editor you choose.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{siteUrl}}assets/og.png">
+  <meta property="og:url" content="{{canonical}}">
+  <link rel="stylesheet" href="{{root}}styles.css">
+</head>
+<body class="bg-white text-zinc-700 antialiased dark:bg-zinc-950 dark:text-zinc-300">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-30 border-b border-zinc-200/70 bg-white/85 backdrop-blur dark:border-zinc-800/70 dark:bg-zinc-950/85">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+      <a href="#top" class="flex items-center gap-2.5 font-semibold text-zinc-900 dark:text-white">
+        <img src="{{root}}assets/icon.png" alt="" width="28" height="28" class="size-7">
+        OpenHere
+      </a>
+      <div class="hidden items-center gap-7 text-sm md:flex">
+        <a href="#features" class="hover:text-zinc-900 dark:hover:text-white">{{navFeatures}}</a>
+        <a href="#apps" class="hover:text-zinc-900 dark:hover:text-white">{{navApps}}</a>
+        <a href="#install" class="hover:text-zinc-900 dark:hover:text-white">{{navInstall}}</a>
+        <a href="#faq" class="hover:text-zinc-900 dark:hover:text-white">{{navFaq}}</a>
+      </div>
+      <div class="flex items-center gap-2 text-sm">
+        <a href="{{altHref}}" hreflang="{{altLang}}" class="rounded-lg px-3 py-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-900">{{navLangLabel}}</a>
+        <a href="https://github.com/demartini/openhere" class="rounded-lg border border-zinc-200 px-3 py-1.5 font-medium text-zinc-900 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900">{{navGithub}}</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="mx-auto grid max-w-6xl items-center gap-14 px-5 pb-20 pt-16 md:pt-24 lg:grid-cols-2">
+      <div>
+        <span class="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 dark:bg-brand-500/15 dark:text-brand-100">{{badge}}</span>
+        <h1 class="mt-5 text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">{{heroTitle}}</h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">{{heroSubtitle}}</p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="https://github.com/demartini/openhere/releases/latest" class="inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
+            {{ctaDownload}}
+          </a>
+          <a href="https://github.com/demartini/openhere" class="inline-flex items-center rounded-xl border border-zinc-200 px-5 py-3 text-sm font-semibold text-zinc-900 hover:bg-zinc-50 dark:border-zinc-800 dark:text-white dark:hover:bg-zinc-900">{{ctaGithub}}</a>
+        </div>
+        <p class="mt-4 text-sm text-zinc-500">{{heroNote}}</p>
+      </div>
+
+      <!-- Context menu mock -->
+      <div class="relative mx-auto w-full max-w-md" aria-hidden="true">
+        <div class="rounded-3xl border border-zinc-200 bg-zinc-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">
+          <div class="flex items-center gap-1.5">
+            <span class="size-3 rounded-full bg-red-400"></span><span class="size-3 rounded-full bg-amber-400"></span><span class="size-3 rounded-full bg-emerald-400"></span>
+            <div class="ml-4 flex items-center gap-2 rounded-md bg-white px-2.5 py-1 text-xs text-zinc-500 dark:bg-zinc-800">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="size-3.5"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
+              Projects
+            </div>
+            <div class="ml-auto flex size-7 items-center justify-center rounded-md bg-white text-brand-500 dark:bg-zinc-800">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-4"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M10 8l4 4-4 4"/></svg>
+            </div>
+          </div>
+          <div class="mt-5 space-y-1 text-sm">
+            <div class="flex items-center gap-2 rounded-lg px-3 py-1.5"><span class="size-4 rounded bg-brand-500/25"></span>openhere</div>
+            <div class="flex items-center gap-2 rounded-lg px-3 py-1.5"><span class="size-4 rounded bg-brand-500/25"></span>website</div>
+          </div>
+          <div class="ml-8 mt-1 w-[calc(100%-2rem)] max-w-64 rounded-xl sm:ml-14 border border-zinc-200 bg-white p-1.5 text-sm shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
+            <div class="flex items-center justify-between rounded-lg bg-brand-500 px-3 py-1.5 font-medium text-white">
+              <span class="flex items-center gap-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="size-4"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M10 8l4 4-4 4"/></svg>
+                {{mockOpenHere}}
+              </span>
+              <span>›</span>
+            </div>
+            <div class="mt-1 space-y-0.5 px-1 py-1 text-zinc-700 dark:text-zinc-200">
+              <div class="flex items-center gap-2 rounded-md px-2 py-1"><span class="size-4 rounded bg-zinc-900"></span>Terminal</div>
+              <div class="flex items-center gap-2 rounded-md px-2 py-1"><span class="size-4 rounded bg-indigo-500"></span>Ghostty</div>
+              <div class="flex items-center gap-2 rounded-md px-2 py-1"><span class="size-4 rounded bg-sky-500"></span>Visual Studio Code</div>
+              <div class="flex items-center gap-2 rounded-md px-2 py-1"><span class="size-4 rounded bg-zinc-500"></span>Cursor</div>
+              <hr class="my-1 border-zinc-200 dark:border-zinc-700">
+              <div class="flex items-center justify-between rounded-md px-2 py-1">{{mockCopyPath}}<span class="text-zinc-400">›</span></div>
+              <div class="rounded-md px-2 py-1">{{mockConfigure}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="border-y border-zinc-200 bg-zinc-50 py-20 dark:border-zinc-800 dark:bg-zinc-900/40">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">{{featuresTitle}}</h2>
+          <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-400">{{featuresSubtitle}}</p>
+        </div>
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <!--EACH features-->
+          <article class="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+            <div class="flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-600 dark:bg-brand-500/15 dark:text-brand-100">{{item.icon}}</div>
+            <h3 class="mt-5 font-semibold text-zinc-900 dark:text-white">{{item.title}}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{{item.text}}</p>
+          </article>
+          <!--/EACH-->
+        </div>
+      </div>
+    </section>
+
+    <!-- Apps -->
+    <section id="apps" class="mx-auto max-w-6xl px-5 py-20">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">{{appsTitle}}</h2>
+        <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-400">{{appsSubtitle}}</p>
+      </div>
+      <div class="mt-10 grid gap-8 md:grid-cols-3">
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500">{{terminalsLabel}}</h3>
+          <ul class="mt-4 flex flex-wrap gap-2 text-sm text-zinc-800 dark:text-zinc-200">
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Terminal</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">iTerm</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Ghostty</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Warp</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">WezTerm</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">kitty</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Alacritty</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Tabby</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Hyper</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500">{{editorsLabel}}</h3>
+          <ul class="mt-4 flex flex-wrap gap-2 text-sm text-zinc-800 dark:text-zinc-200">
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Visual Studio Code</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Cursor</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Zed</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Xcode</li>
+            <li class="rounded-lg border border-zinc-200 px-3 py-1.5 dark:border-zinc-800">Sublime Text</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-zinc-500">{{customLabel}}</h3>
+          <p class="mt-4 rounded-xl border border-dashed border-zinc-300 p-4 text-sm text-zinc-600 dark:border-zinc-700 dark:text-zinc-400">{{customText}}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="border-y border-zinc-200 bg-zinc-50 py-20 dark:border-zinc-800 dark:bg-zinc-900/40">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">{{stepsTitle}}</h2>
+        <ol class="mt-10 grid gap-5 md:grid-cols-3">
+          <!--EACH steps-->
+          <li class="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+            <span class="flex size-8 items-center justify-center rounded-full bg-brand-500 text-sm font-semibold text-white">{{item.n}}</span>
+            <h3 class="mt-4 font-semibold text-zinc-900 dark:text-white">{{item.title}}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{{item.text}}</p>
+          </li>
+          <!--/EACH-->
+        </ol>
+      </div>
+    </section>
+
+    <!-- Install -->
+    <section id="install" class="mx-auto max-w-6xl px-5 py-20">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">{{installTitle}}</h2>
+        <p class="mt-3 text-lg text-zinc-600 dark:text-zinc-400">{{installSubtitle}}</p>
+      </div>
+      <ol class="mt-10 max-w-3xl space-y-8">
+        <li class="flex gap-5">
+          <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-white dark:bg-white dark:text-zinc-900">1</span>
+          <div>
+            <h3 class="font-semibold text-zinc-900 dark:text-white">{{install1Title}}</h3>
+            <p class="mt-1 text-zinc-600 dark:text-zinc-400">{{install1Text}}</p>
+            <a href="https://github.com/demartini/openhere/releases/latest" class="mt-3 inline-flex rounded-xl bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">{{installCta}}</a>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-white dark:bg-white dark:text-zinc-900">2</span>
+          <div class="min-w-0 flex-1">
+            <h3 class="font-semibold text-zinc-900 dark:text-white">{{install2Title}}</h3>
+            <p class="mt-1 text-zinc-600 dark:text-zinc-400">{{install2Text}}</p>
+            <div class="mt-3 flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-zinc-50 py-2 pl-4 pr-2 dark:border-zinc-800 dark:bg-zinc-900">
+              <code id="cmd" class="overflow-x-auto whitespace-nowrap font-mono text-sm text-zinc-800 dark:text-zinc-200">xattr -dr com.apple.quarantine /Applications/OpenHere.app</code>
+              <button type="button" data-copy="#cmd" data-copied="{{copied}}" class="shrink-0 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700">{{copy}}</button>
+            </div>
+          </div>
+        </li>
+        <li class="flex gap-5">
+          <span class="flex size-8 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-sm font-semibold text-white dark:bg-white dark:text-zinc-900">3</span>
+          <div>
+            <h3 class="font-semibold text-zinc-900 dark:text-white">{{install3Title}}</h3>
+            <p class="mt-1 text-zinc-600 dark:text-zinc-400">{{install3Text}}</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Trust -->
+    <section class="border-y border-zinc-200 bg-zinc-50 py-20 dark:border-zinc-800 dark:bg-zinc-900/40">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">{{trustTitle}}</h2>
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <!--EACH trust-->
+          <div class="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+            <h3 class="font-semibold text-zinc-900 dark:text-white">{{item.title}}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">{{item.text}}</p>
+          </div>
+          <!--/EACH-->
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mx-auto max-w-3xl px-5 py-20">
+      <h2 class="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">{{faqTitle}}</h2>
+      <div class="mt-8 divide-y divide-zinc-200 border-y border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">
+        <!--EACH faq-->
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-zinc-900 dark:text-white">
+            {{item.q}}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-4 shrink-0 text-zinc-400 transition group-open:rotate-180" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-3 leading-relaxed text-zinc-600 dark:text-zinc-400">{{item.a}}</p>
+        </details>
+        <!--/EACH-->
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-zinc-200 dark:border-zinc-800">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 text-sm md:flex-row md:items-center md:justify-between">
+      <div class="flex items-center gap-3">
+        <img src="{{root}}assets/icon.png" alt="" width="32" height="32" class="size-8">
+        <div>
+          <p class="font-semibold text-zinc-900 dark:text-white">OpenHere</p>
+          <p class="text-zinc-500">{{footerTagline}}</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-zinc-600 dark:text-zinc-400">
+        <a href="https://github.com/demartini/openhere" class="hover:text-zinc-900 dark:hover:text-white">GitHub</a>
+        <a href="https://github.com/demartini/openhere/releases" class="hover:text-zinc-900 dark:hover:text-white">{{footerReleases}}</a>
+        <a href="https://github.com/demartini/openhere/issues/new/choose" class="hover:text-zinc-900 dark:hover:text-white">{{footerIssues}}</a>
+        <a href="https://github.com/demartini/openhere/blob/main/LICENSE" class="hover:text-zinc-900 dark:hover:text-white">{{footerLicense}}</a>
+      </div>
+    </div>
+    <p class="pb-8 text-center text-xs text-zinc-500">{{footerMadeBy}} · © {{year}}</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const text = document.querySelector(button.dataset.copy).textContent.trim();
+        const label = button.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+          button.textContent = button.dataset.copied;
+          setTimeout(() => (button.textContent = label), 1600);
+        } catch {}
+      });
+    });
+  </script>
+</body>
+</html>
