@@ -1242,6 +1242,23 @@
         }
       }
     },
+    "OpenHere %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OpenHere %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OpenHere %@"
+          }
+        }
+      }
+    },
     "OpenHere Help": {
       "extractionState": "manual",
       "localizations": {

@@ -40,7 +40,7 @@ SwiftPM has fetched Sparkle's tools.
 
 ## Cutting a release
 
-1. Add a `## <version>` section to `CHANGELOG.md` (for example `## 1.0.1`). Its body becomes the GitHub
+1. Add a `## <version>` section to `CHANGELOG.md`, committed as `chore(release): <version>` (for example `## 1.0.1`). Its body becomes the GitHub
    Release notes, which is also what Sparkle's "Release Notes" link shows; the workflow fails when the section is
    missing.
 2. Merge to `main`, then tag and push:
@@ -56,8 +56,10 @@ Nothing has to be bumped by hand:
 | Version (`CFBundleShortVersionString`) | the tag (`v1.0.1` → `1.0.1`); the workflow rejects tags that are not `vMAJOR.MINOR.PATCH` |
 | Build (`CFBundleVersion`) | the number of commits (`git rev-list --count HEAD`), which only grows — Sparkle compares it |
 
-The `Release` workflow tests, builds, signs the DMG for Sparkle and publishes the GitHub Release. It then commits
-`chore(release): <version>` to `main` with the new `site/public/appcast.xml` and `MARKETING_VERSION` in
+The `Release` workflow tests, builds, signs the DMG for Sparkle and publishes the GitHub Release. The appcast item
+embeds the same `CHANGELOG.md` section as HTML (`scripts/changelog_html.py`), so Sparkle's update window shows the
+notes themselves rather than a web page. It then commits
+`chore(release): publish <version>` to `main` with the new `site/public/appcast.xml` and `MARKETING_VERSION` in
 `Config/Base.xcconfig` (so local builds report the released version) and dispatches the `Pages` workflow explicitly,
 because pushes made with `GITHUB_TOKEN` do not trigger other workflows. The appcast lists only the latest release,
 so every older version updates straight to it. Local `scripts/build_release.sh` builds use the same rules

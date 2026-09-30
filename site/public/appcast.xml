@@ -7,11 +7,12 @@
     <language>en</language>
     <item>
       <title>Version 1.0.1</title>
-      <pubDate>Wed, 30 Sep 2026 11:54:31 +0000</pubDate>
+      <pubDate>Wed, 30 Sep 2026 15:17:34 +0000</pubDate>
       <sparkle:version>16</sparkle:version>
       <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://github.com/demartini/openhere/releases/tag/v1.0.1</sparkle:releaseNotesLink>
+      <description><![CDATA[<h2>Version 1.0.1</h2><h3>Fixed</h3><ul><li>Settings were lost every time the installed app was reopened, so the onboarding ran again.</li><li>The toolbar button and the context-menu actions did nothing in the downloaded (ad-hoc signed) app; only Copy Path worked.</li></ul><h3>Changed</h3><ul><li>Settings and the request token are now stored in <code>~/Library/Application Support/OpenHere</code> and read by the Finder extension through a read-only sandbox exception. The app no longer uses an App Group, which macOS only grants to apps with a paid Apple Developer team. Settings saved by 1.0.0 are not migrated, so the onboarding runs once more.</li><li>The Finder extension logs how many locations it monitors and whether it can read its settings (<code>log stream --predicate 'subsystem == "dev.demartini.openhere"' --info</code>).</li><li>Version and build number are set by the release itself: the version comes from the git tag and the build number is the commit count.</li></ul>]]></description>
+      <sparkle:fullReleaseNotesLink>https://github.com/demartini/openhere/releases</sparkle:fullReleaseNotesLink>
       <enclosure url="https://github.com/demartini/openhere/releases/download/v1.0.1/OpenHere-1.0.1.dmg"
                  sparkle:edSignature="k0Kps1DBs9Cn7vifkikupwaV7/QGxVITQiZt+eE/zOcGueq9H4HLOeyoOOrRdvSZQb+7I7botAZSKfFogx4XAA==" length="4639979"
                  type="application/octet-stream"/>

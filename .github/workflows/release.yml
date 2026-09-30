@@ -80,7 +80,7 @@ jobs:
           # Keep the project's version in step with the release so local builds report it.
           sed -i '' -E "s/^MARKETING_VERSION = .*/MARKETING_VERSION = $VERSION/" Config/Base.xcconfig
           git add site/public/appcast.xml Config/Base.xcconfig
-          git commit -m "chore(release): ${VERSION}" -m "Update the appcast and MARKETING_VERSION for ${GITHUB_REF_NAME}."
+          git commit -m "chore(release): publish ${VERSION}" -m "Update the appcast and MARKETING_VERSION for ${GITHUB_REF_NAME}."
           git push origin main
 
       # Pushes made with GITHUB_TOKEN do not trigger other workflows, so deploy the site explicitly.
