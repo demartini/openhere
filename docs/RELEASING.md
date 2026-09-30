@@ -50,8 +50,8 @@ git tag v1.0.0 && git push origin v1.0.0
 ```
 
 The `Release` workflow tests, builds, signs the DMG for Sparkle, publishes the GitHub Release, and commits
-the new `site/public/appcast.xml` to `main`; that push makes the `Pages` workflow redeploy the site with the
-new appcast. The tag must be `v<version>`; the build number (`CFBundleVersion`) is the workflow run number
+the new `site/public/appcast.xml` to `main`; the workflow then dispatches the `Pages` workflow explicitly (pushes made with `GITHUB_TOKEN` do not trigger
+other workflows) so the site is redeployed with the new appcast. The tag must be `v<version>`; the build number (`CFBundleVersion`) is the workflow run number
 and always increases, which is what Sparkle compares. The appcast lists only the latest release, so every
 older version updates straight to it.
 

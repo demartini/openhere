@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   release:
@@ -69,3 +70,9 @@ jobs:
           git add site/public/appcast.xml
           git commit -m "Appcast for ${GITHUB_REF_NAME}"
           git push origin main
+
+      # Pushes made with GITHUB_TOKEN do not trigger other workflows, so deploy the site explicitly.
+      - name: Deploy the site with the new appcast
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
