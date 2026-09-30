@@ -5,5 +5,16 @@
     <link>https://demartini.github.io/openhere/</link>
     <description>OpenHere updates</description>
     <language>en</language>
+    <item>
+      <title>Version 1.0.0</title>
+      <pubDate>Wed, 30 Sep 2026 10:52:54 +0000</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://github.com/demartini/openhere/releases/tag/v1.0.0</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/demartini/openhere/releases/download/v1.0.0/OpenHere-1.0.0.dmg"
+                 sparkle:edSignature="M06M2UYoESwS+NPQpIDtKRyj5+BCRm11RD/NrGFc29Rx9LFFLpCLmRW70Kjyq9wQzFRc5fQQMrXjtgomObXfBA==" length="4641665"
+                 type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
