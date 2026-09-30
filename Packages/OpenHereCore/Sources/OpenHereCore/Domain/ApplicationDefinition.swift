@@ -6,9 +6,6 @@ public enum OpenHereConstants {
   public static let extensionBundleIdentifier = "dev.demartini.openhere.FinderExtension"
   public static let urlScheme = "openhere"
   public static let repository = "demartini/openhere"
-  /// Used when the Info.plist does not provide a team-prefixed group (e.g. unsigned test runs).
-  public static let fallbackAppGroup = "group.dev.demartini.openhere"
-  public static let appGroupInfoPlistKey = "OpenHereAppGroup"
 }
 
 public enum ApplicationKind: String, Codable, Sendable, CaseIterable, Hashable {

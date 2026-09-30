@@ -4,9 +4,11 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
-	<key>com.apple.security.application-groups</key>
+	<!-- Read-only access to the folder where the app keeps the settings and the request token
+	     (see SharedStorage). An App Group cannot be used without a paid Apple team. -->
+	<key>com.apple.security.temporary-exception.files.home-relative-path.read-only</key>
 	<array>
-		<string>$(TeamIdentifierPrefix)group.dev.demartini.openhere</string>
+		<string>/Library/Application Support/OpenHere/</string>
 	</array>
 </dict>
 </plist>

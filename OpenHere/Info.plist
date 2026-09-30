@@ -58,7 +58,5 @@
 	<true/>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
-	<key>OpenHereAppGroup</key>
-	<string>$(TeamIdentifierPrefix)group.dev.demartini.openhere</string>
 </dict>
 </plist>

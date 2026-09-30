@@ -1,6 +1,7 @@
 import Cocoa
 import FinderSync
 import OpenHereCore
+import os
 
 /// Deliberately tiny: it renders `FinderMenuModel` and forwards clicks to the app.
 final class FinderSync: FIFinderSync {
@@ -42,6 +43,10 @@ final class FinderSync: FIFinderSync {
         includingResourceValuesForKeys: nil, options: [.skipHiddenVolumes]) ?? []
     urls.formUnion(volumes)
     FIFinderSyncController.default().directoryURLs = urls
+    // Visible with: log stream --predicate 'subsystem == "dev.demartini.openhere"' --info
+    let settingsReadable = store.requestToken() != nil
+    Logger(subsystem: OpenHereLog.subsystem, category: LogCategory.finderExtension.rawValue)
+      .info("Monitoring \(urls.count, privacy: .public) locations; token readable: \(settingsReadable, privacy: .public)")
   }
 
   // MARK: Toolbar

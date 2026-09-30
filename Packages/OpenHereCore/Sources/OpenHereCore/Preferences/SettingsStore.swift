@@ -11,11 +11,38 @@ public protocol SettingsStoring: Sendable {
   @discardableResult func ensureRequestToken() -> String
 }
 
-/// Settings and the request token stored as files in the App Group container.
+/// Where the app and its Finder extension share state.
+///
+/// An App Group would be the usual choice, but outside the Mac App Store macOS only grants one to
+/// apps whose group id is prefixed with their Team ID (or authorised by an embedded profile), and
+/// macOS 27 silently denies containers across teams. A build without a paid Apple team – an
+/// ad-hoc or development-signed DMG – therefore cannot use it: the app would write to a container
+/// the sandboxed extension can never read. Instead the (unsandboxed) app writes to a fixed folder in
+/// the user's real home directory, and the extension reads it through a read-only sandbox exception
+/// (`com.apple.security.temporary-exception.files.home-relative-path.read-only`).
+public enum SharedStorage {
+  /// Path relative to the home directory; must match the extension's entitlement.
+  public static let relativePath = "Library/Application Support/OpenHere"
+
+  /// The user's real home directory. `NSHomeDirectory()` would return the sandbox container inside
+  /// the extension, so ask the account database instead.
+  public static var realHomeDirectory: URL {
+    if let entry = getpwuid(getuid()), let home = entry.pointee.pw_dir {
+      return URL(fileURLWithPath: String(cString: home), isDirectory: true)
+    }
+    return FileManager.default.homeDirectoryForCurrentUser
+  }
+
+  public static var directory: URL {
+    realHomeDirectory.appending(path: relativePath, directoryHint: .isDirectory)
+  }
+}
+
+/// Settings and the request token stored as files in `SharedStorage.directory`.
 ///
 /// Plain files are used instead of `UserDefaults`: the extension runs in another process and a
-/// preferences suite is cached per process (and can be detached from `cfprefsd`), so changes made in
-/// the app could stay invisible to the extension. Reading a small file on every menu is instant.
+/// preferences suite is cached per process, so changes made in the app could stay invisible to it.
+/// Reading a small file on every menu is instant. Only the app writes; the extension only reads.
 public final class FileSettingsStore: SettingsStoring, @unchecked Sendable {
   private let directory: URL
   private var settingsURL: URL { directory.appending(path: "settings.json") }
@@ -23,20 +50,13 @@ public final class FileSettingsStore: SettingsStoring, @unchecked Sendable {
 
   public init(directory: URL) {
     self.directory = directory
+    // Fails silently in the sandboxed extension, which only has read access.
     try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
   }
 
   /// The store shared by the app and the extension.
-  public static func shared(bundle: Bundle = .main) -> FileSettingsStore {
-    let group = AppGroup.identifier(bundle: bundle)
-    let container =
-      FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group)
-      ?? FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-      .appending(path: "OpenHere", directoryHint: .isDirectory)
-    if FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: group) == nil {
-      OpenHereLog.error(.app, "App Group container unavailable", detail: group)
-    }
-    return FileSettingsStore(directory: container)
+  public static func shared() -> FileSettingsStore {
+    FileSettingsStore(directory: SharedStorage.directory)
   }
 
   public func load() -> OpenHereSettings {
@@ -48,7 +68,11 @@ public final class FileSettingsStore: SettingsStoring, @unchecked Sendable {
 
   public func save(_ settings: OpenHereSettings) {
     guard let data = try? JSONEncoder().encode(settings) else { return }
-    try? data.write(to: settingsURL, options: .atomic)
+    do {
+      try data.write(to: settingsURL, options: .atomic)
+    } catch {
+      OpenHereLog.error(.app, "Saving settings failed", detail: "\(error)")
+    }
   }
 
   public func reset() {
@@ -73,16 +97,5 @@ public final class FileSettingsStore: SettingsStoring, @unchecked Sendable {
     FileManager.default.createFile(
       atPath: tokenURL.path, contents: Data(token.utf8), attributes: [.posixPermissions: 0o600])
     return token
-  }
-}
-
-public enum AppGroup {
-  /// Team-prefixed group id injected into Info.plist (`$(TeamIdentifierPrefix)group.…`).
-  public static func identifier(bundle: Bundle = .main) -> String {
-    let value = bundle.object(forInfoDictionaryKey: OpenHereConstants.appGroupInfoPlistKey) as? String
-    guard let value, !value.isEmpty, !value.contains("$(") else {
-      return OpenHereConstants.fallbackAppGroup
-    }
-    return value
   }
 }
