@@ -6,15 +6,15 @@
     <description>OpenHere updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.0.2</title>
-      <pubDate>Wed, 30 Sep 2026 15:35:02 +0000</pubDate>
-      <sparkle:version>18</sparkle:version>
-      <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+      <title>Version 1.0.3</title>
+      <pubDate>Wed, 30 Sep 2026 16:03:21 +0000</pubDate>
+      <sparkle:version>20</sparkle:version>
+      <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>15.0</sparkle:minimumSystemVersion>
-      <description><![CDATA[<h2>Version 1.0.2</h2><h3>Fixed</h3><ul><li><strong>Release notes</strong>: the update window showed the GitHub release page instead of the notes. It now shows the notes themselves, in Sparkle's own style.</li></ul><h3>Changed</h3><ul><li><strong>Settings sidebar</strong>: more compact, with smaller icons, tighter rows and the version in the footer.</li></ul>]]></description>
+      <description><![CDATA[<h2>Version 1.0.3</h2><h3>Fixed</h3><ul><li><strong>Context menu on external volumes</strong>: the Finder menu did not appear inside volumes that macOS reports as hidden, such as some external disks, because the extension never watched them. It now watches everything mounted under <code>/Volumes</code>.</li></ul>]]></description>
       <sparkle:fullReleaseNotesLink>https://github.com/demartini/openhere/releases</sparkle:fullReleaseNotesLink>
-      <enclosure url="https://github.com/demartini/openhere/releases/download/v1.0.2/OpenHere-1.0.2.dmg"
-                 sparkle:edSignature="CSyB7FdEe/1k7QtzCPPXAGPD796cUJOFUPhCOxOdL1j4AR2DeH14VA1p24Sk8JOonnhp5Xf6UEhQXsfeTKgeAw==" length="4639751"
+      <enclosure url="https://github.com/demartini/openhere/releases/download/v1.0.3/OpenHere-1.0.3.dmg"
+                 sparkle:edSignature="Tw/QFyYr+e7/VA4UAXNZCqCQGvZtIC1Av9h5uo2IvqWgZXYLosSNq0Xd0EaWmiDgr68U5zESmWx80NqXUgg8Cw==" length="4651742"
                  type="application/octet-stream"/>
     </item>
   </channel>
