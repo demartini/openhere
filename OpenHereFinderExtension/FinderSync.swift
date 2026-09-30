@@ -35,18 +35,16 @@ final class FinderSync: FIFinderSync {
     }
   }
 
-  /// Finder Sync only decorates locations it was told to watch; every mounted volume needs its own entry.
+  /// Finder Sync only decorates locations it was told to watch; every browsable volume needs its own entry.
   private func updateMonitoredDirectories() {
-    var urls: Set<URL> = [URL(fileURLWithPath: "/")]
-    let volumes =
-      FileManager.default.mountedVolumeURLs(
-        includingResourceValuesForKeys: nil, options: [.skipHiddenVolumes]) ?? []
-    urls.formUnion(volumes)
+    let urls = MonitoredLocations.current()
     FIFinderSyncController.default().directoryURLs = urls
-    // Visible with: log stream --predicate 'subsystem == "dev.demartini.openhere"' --info
+    // Visible with: /usr/bin/log stream --predicate 'subsystem == "dev.demartini.openhere"' --info
     let settingsReadable = store.requestToken() != nil
     Logger(subsystem: OpenHereLog.subsystem, category: LogCategory.finderExtension.rawValue)
-      .info("Monitoring \(urls.count, privacy: .public) locations; token readable: \(settingsReadable, privacy: .public)")
+      .info(
+        "Monitoring \(urls.count, privacy: .public) locations (\(urls.filter { $0.path.hasPrefix("/Volumes/") }.count, privacy: .public) under /Volumes); token readable: \(settingsReadable, privacy: .public)"
+      )
   }
 
   // MARK: Toolbar

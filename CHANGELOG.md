@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.3
+
+### Fixed
+
+- **Context menu on external volumes**: the Finder menu did not appear inside volumes that macOS reports as hidden, such as some external disks, because the extension never watched them. It now watches everything mounted under `/Volumes`.
+
 ## 1.0.2
 
 ### Fixed

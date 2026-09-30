@@ -33,7 +33,7 @@ redaction.
 | No Finder window (shortcut or menu bar item)    | Desktop                                              |
 | App uninstalled                                 | Menu entry disappears; no crash                      |
 | Path `/tmp/My "weird" $(id)/it's`               | Opens correctly, nothing executed                    |
-| External disk / network volume                  | Menu appears and opens                               |
+| External disk / network volume (`/Volumes/…`)   | Menu appears and opens; the extension logs `N under /Volumes` |
 | Volume mounted while Finder is running          | Menu appears without restarting anything             |
 | Shortcut ⇧⌘O in Finder / in another app         | Works in Finder only (Finder-only mode)              |
 | First shortcut / menu bar use                   | macOS asks for Automation → Finder permission        |
