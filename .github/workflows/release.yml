@@ -68,7 +68,7 @@ jobs:
           mkdir -p site/public
           cp "$RUNNER_TEMP/appcast.xml" site/public/appcast.xml
           git add site/public/appcast.xml
-          git commit -m "Appcast for ${GITHUB_REF_NAME}"
+          git commit -m "chore(site): update appcast for ${GITHUB_REF_NAME}"
           git push origin main
 
       # Pushes made with GITHUB_TOKEN do not trigger other workflows, so deploy the site explicitly.
