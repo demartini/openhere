@@ -31,6 +31,16 @@ else
 fi
 # SIGNATURE looks like: sparkle:edSignature="…" length="…"
 
+# Release notes: the matching CHANGELOG.md section, rendered as HTML and embedded in the item, so the
+# update window shows the text itself instead of a web page. Falls back to a link when there is no section.
+NOTES_HTML="$(python3 "$ROOT/scripts/changelog_html.py" "$VERSION" "$ROOT/CHANGELOG.md")"
+if [[ -n "$NOTES_HTML" ]]; then
+  NOTES_XML="<description><![CDATA[${NOTES_HTML}]]></description>
+      <sparkle:fullReleaseNotesLink>https://github.com/${REPO}/releases</sparkle:fullReleaseNotesLink>"
+else
+  NOTES_XML="<sparkle:releaseNotesLink>https://github.com/${REPO}/releases/tag/v${VERSION}</sparkle:releaseNotesLink>"
+fi
+
 mkdir -p "$(dirname "$OUT")"
 cat > "$OUT" <<XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -46,7 +56,7 @@ cat > "$OUT" <<XML
       <sparkle:version>${BUILD}</sparkle:version>
       <sparkle:shortVersionString>${VERSION}</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>${MIN_OS}</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://github.com/${REPO}/releases/tag/v${VERSION}</sparkle:releaseNotesLink>
+      ${NOTES_XML}
       <enclosure url="https://github.com/${REPO}/releases/download/v${VERSION}/$(basename "$DMG")"
                  ${SIGNATURE}
                  type="application/octet-stream"/>
