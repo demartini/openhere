@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.2
+
+### Fixed
+
+- **Release notes**: the update window showed the GitHub release page instead of the notes. It now shows the notes themselves, in Sparkle's own style.
+
+### Changed
+
+- **Settings sidebar**: more compact, with smaller icons, tighter rows and the version in the footer.
+
 ## 1.0.1
 
 ### Fixed
