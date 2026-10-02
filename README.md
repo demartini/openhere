@@ -23,6 +23,9 @@
 - [Supported Applications](#supported-applications)
 - [Requirements](#requirements)
 - [Installation](#installation)
+  - [Homebrew](#homebrew)
+  - [Manual](#manual)
+  - [Setup](#setup)
 - [Usage](#usage)
   - [Toolbar](#toolbar)
   - [Context Menu](#context-menu)
@@ -82,6 +85,16 @@ Applications are detected automatically; only those installed on the machine are
 
 ## Installation
 
+### Homebrew
+
+```console
+brew install --cask demartini/tap/openhere
+```
+
+The cask clears the quarantine flag for you, so the app opens without further steps. Updates can come from Homebrew (`brew upgrade --cask openhere`) or from inside the app.
+
+### Manual
+
 1. Download the latest `OpenHere-<version>.dmg` from [Releases][releases-url] and drag **OpenHere** to **Applications**.
 2. The app is not notarized, so macOS blocks the first launch of a downloaded copy. Clear the quarantine flag once:
 
@@ -91,10 +104,12 @@ Applications are detected automatically; only those installed on the machine are
 
    Alternatively, right-click the app and choose **Open**.
 
-3. Launch OpenHere and follow the onboarding: pick your default applications and enable the Finder extension in **System Settings › General › Login Items & Extensions › Finder**.
-4. In Finder, choose **View › Customize Toolbar…** and drag **Open Here** into the toolbar.
+### Setup
 
-Later versions are installed from inside the app (**Settings › General › Updates**).
+1. Launch OpenHere and follow the onboarding: pick your default applications and enable the Finder extension in **System Settings › General › Login Items & Extensions › Finder**.
+2. In Finder, choose **View › Customize Toolbar…** and drag **Open Here** into the toolbar.
+
+Later versions are installed from inside the app (**Settings › General › Updates**) or with Homebrew.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
